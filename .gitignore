@@ -3,3 +3,7 @@
 
 # idea
 .idea/*
+
+# submodules
+src/pmk/
+src/vial-kb/
