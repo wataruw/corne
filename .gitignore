@@ -5,5 +5,5 @@
 .idea/*
 
 # submodules
-src/pmk/
+src/qmk/
 src/vial-kb/
