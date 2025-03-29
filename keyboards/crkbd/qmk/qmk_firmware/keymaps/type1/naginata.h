@@ -16,6 +16,11 @@
 
 #pragma once
 
+typedef enum {
+    NG_STRING_DEFAULT = 0,
+    NG_STRING_NO_NEWLINE = 1 << 0,
+} ng_string_option_t;
+
 void naginata_type(void);
 void naginata_clear(void);
 void compress_buffer(int nt);
@@ -57,7 +62,8 @@ void ng_undo(void);
 void ng_saihenkan(void);
 void ng_eof(void);
 
-// bool enable_naginata(uint16_t, keyrecord_t *);
+void ng_send_unicode_string_P(const char *pstr);
+void ng_send_unicode_string_P_ex(const char *pstr, ng_string_option_t options);
 
 // なぜKC_キーコードを使わず、NG_キーコードを定義するのか
 // 1. 英字レイアウトがQWERTYでない場合でもOK
