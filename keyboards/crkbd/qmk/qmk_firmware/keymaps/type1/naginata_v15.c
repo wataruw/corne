@@ -263,7 +263,7 @@ const PROGMEM naginata_keymap ngmap[] = {
   {.key = B_M|B_D|B_L              , .kana = "toxu"    }, // とぅ
   {.key = B_J|B_D|B_L              , .kana = "doxu"    }, // どぅ
   {.key = B_M|B_R|B_O              , .kana = "sye"     }, // しぇ
-  {.key = B_M|B_G|B_O              , .kana = "tye"     }, // ちぇ
+  {.key = B_G|B_O                  , .kana = "tye"     }, // ちぇ
   {.key = B_J|B_R|B_O              , .kana = "zye"     }, // じぇ
   {.key = B_J|B_G|B_O              , .kana = "dye"     }, // ぢぇ
   {.key = B_V|B_SCLN|B_J           , .kana = "fa"      }, // ふぁ
