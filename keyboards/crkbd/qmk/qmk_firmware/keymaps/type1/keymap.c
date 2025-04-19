@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "keymap_japanese.h"
 #include "naginata.h"
+#include "quantum.h"
 
 // 薙刀式のオン/オフに使うキーの定義
 static uint16_t ng_on_keys[] = {KC_H, KC_J};  // HJで薙刀式オン
@@ -14,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+--------+--------+--------+--------+--------+--------|
       KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LNG2,       KC_LNG1,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
+      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,MT(MOD_RALT,KC_B),                      KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI,   MO(2),     KC_SPC,        KC_ENT,   MO(1), KC_RALT
                                       //`-----------------------------'  `-----------------------------'
@@ -113,10 +114,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-  [0] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
-  [1] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
-  [2] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
-  [3] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
+  [0] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
+  [1] = { ENCODER_CCW_CW(KC_MS_UP, KC_MS_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_MS_RIGHT, KC_MS_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
+  [2] = { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_MS_WH_RIGHT, KC_MS_WH_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
+  [3] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
 };
 #endif
 
