@@ -1556,8 +1556,9 @@ void ng_undo() {
 void ng_saihenkan() {
   switch (naginata_config.os) {
     case NG_WIN:
-      tap_code(KC_LGUI);
+      register_code(KC_LGUI);
       tap_code(KC_SLSH);
+      unregister_code(KC_LGUI);
       break;
     case NG_LINUX:
       tap_code(KC_INT4);

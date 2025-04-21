@@ -61,11 +61,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [4] = LAYOUT_split_3x6_3_ex2(
   //,---------------------------------------------------------------------------.  ,-----------------------------------------------------------------.
-       KC_TAB, XXXXXXX,    XXXXXXX,   KC_MS_UP,     XXXXXXX, XXXXXXX, LCTL(KC_C),    LCTL(KC_V), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
+       KC_TAB, XXXXXXX,    KC_HOME,   KC_MS_UP,     KC_PGUP, XXXXXXX, LCTL(KC_C),    LCTL(KC_V),   KC_F7,   KC_F8,   KC_F9,  KC_F12, XXXXXXX, KC_BSPC,
   //|--------+--------+-----------+-----------+------------+--------+-----------|  |-----------+--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, KC_MS_LEFT,    KC_BTN1, KC_MS_RIGHT, XXXXXXX, LCTL(KC_Z),    LCTL(KC_R), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL,
+      KC_LCTL, XXXXXXX, KC_MS_LEFT,    KC_BTN1, KC_MS_RIGHT, KC_BTN2, LCTL(KC_Z),    LCTL(KC_R),   KC_F4,   KC_F5,   KC_F6,  KC_F11, XXXXXXX,  KC_DEL,
   //|--------+--------+-----------+-----------+------------+--------+-----------'  `-----------+--------+--------+--------+--------+--------+--------|
-      KC_LSFT, XXXXXXX,    XXXXXXX, KC_MS_DOWN,     XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_ESC,
+      KC_LSFT, XXXXXXX,     KC_END, KC_MS_DOWN,     KC_PGDN, XXXXXXX,                              KC_F1,   KC_F2,   KC_F3,  KC_F10, XXXXXXX,  KC_ESC,
   //|--------+--------+-----------+-----------+------------+--------+-----------.  ,-----------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI, _______,     KC_SPC,        KC_ENT, _______, _______
                                       //`-----------------------------'  `-----------------------------'
@@ -142,7 +142,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
   [1] = { ENCODER_CCW_CW(KC_MS_UP, KC_MS_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_MS_RIGHT, KC_MS_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
   [2] = { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_MS_WH_RIGHT, KC_MS_WH_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
   [3] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
-  [4] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
+  [4] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
 };
 #endif
 
