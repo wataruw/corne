@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------------------.  ,-----------------------------------------------------------------.
        KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, LCTL(KC_C),    LCTL(KC_V),    KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
   //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LALT,       KC_RALT,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,   TO(4),
+      KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_LALT,       KC_RALT,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,   TO(3),
   //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,   TO(1),
   //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+--------+--------+--------+--------+--------+--------|
@@ -24,50 +24,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_split_3x6_3_ex2(
   //,-----------------------------------------------------------------.  ,---------------------------------------------------------------------------.
-       KC_TAB, KC_PMNS, JP_SCLN,    JP_7,    JP_8,    JP_9, LCTL(KC_C),    LCTL(KC_V), KC_HOME, KC_MS_WH_DOWN, KC_MS_WH_UP, KC_PGUP, XXXXXXX, _______,
+       KC_TAB, KC_PMNS, JP_SCLN,    JP_7,    JP_8,    JP_9, LCTL(KC_C),    LCTL(KC_V), KC_HOME, KC_MS_WH_DOWN, KC_MS_WH_UP, KC_PGUP, XXXXXXX, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+--------+--------------+------------+--------+--------+--------|
-      KC_LCTL, KC_PPLS, JP_COLN,    JP_4,    JP_5,    JP_6,    KC_LALT,       KC_RALT, KC_LEFT,       KC_DOWN,       KC_UP, KC_RGHT, XXXXXXX, _______,
+      KC_LCTL, KC_PPLS, JP_COLN,    JP_4,    JP_5,    JP_6,    KC_LALT,       KC_RALT, KC_LEFT,       KC_DOWN,       KC_UP, KC_RGHT, XXXXXXX,   TO(3),
   //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+--------+--------------+------------+--------+--------+--------|
-      KC_LSFT, KC_PDOT,    JP_0,    JP_1,    JP_2,    JP_3,                             KC_END,       KC_BTN1,     KC_BTN2, KC_PGDN, XXXXXXX,   TO(0),
+      KC_LSFT, KC_PDOT,    JP_0,    JP_1,    JP_2,    JP_3,                             KC_END,       KC_BTN1,     KC_BTN2, KC_PGDN, XXXXXXX,   TO(1),
   //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+--------+--------------+------------+--------+--------+--------|
-                                          KC_LGUI, _______,     KC_SPC,        KC_ENT, _______, _______
+                                          KC_LGUI,   TO(2),     KC_SPC,        KC_ENT,   TO(0), _______
                                       //`-----------------------------'  `-----------------------------'
   ),
 
   [2] = LAYOUT_split_3x6_3_ex2(
-  //,-----------------------------------------------------------------.  ,-----------------------------------------------------------------.
-       KC_TAB, S(JP_1), S(JP_2), S(JP_3), S(JP_4), S(JP_5), LCTL(KC_C),    LCTL(KC_V), S(JP_6), S(JP_7), S(JP_8),S(JP_9),S(JP_SLSH),_______,
-  //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+--------+--------+--------+--------+--------+--------|
-      KC_LCTL, RGB_TOG,NGSW_LNX,NGSW_MAC,NGSW_WIN, NG_SHOS,    KC_LALT,       KC_RALT,S(JP_CIRC),JP_MINS,JP_LBRC, JP_RBRC, JP_BSLS, _______,
-  //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+--------+--------+--------+--------+--------+--------|
-      KC_LSFT,  KC_NUM, NG_KOTI,  NG_MLV, NG_TAYO, XXXXXXX,                           JP_AT,S(JP_MINS),S(JP_LBRC),S(JP_RBRC),JP_YEN,JP_CIRC,
-  //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   TO(0),     KC_SPC,        KC_ENT, _______, _______
-                                      //`-----------------------------'  `-----------------------------'
+  //,-----------------------------------------------------------------.  ,--------------------------------------------------------------------------------.
+       KC_TAB, S(JP_1), S(JP_2), S(JP_3), S(JP_4), S(JP_5), LCTL(KC_C),    LCTL(KC_V),    S(JP_6),    S(JP_7),    S(JP_8),    S(JP_9), S(JP_SLSH),  JP_YEN,
+  //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+--------|
+      KC_LCTL, RGB_TOG,NGSW_LNX,NGSW_MAC,NGSW_WIN, NG_SHOS,    KC_LALT,       KC_RALT, S(JP_CIRC),    JP_MINS,    JP_LBRC,    JP_RBRC,    JP_BSLS,   TO(3),
+  //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+-----------+-----------+-----------+-----------+-----------+--------|
+      KC_LSFT,  KC_NUM, NG_KOTI,  NG_MLV, NG_TAYO, XXXXXXX,                                 JP_AT, S(JP_MINS), S(JP_LBRC), S(JP_RBRC),    JP_CIRC,   TO(1),
+  //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+-----------+-----------+-----------+-----------+-----------+--------|
+                                          KC_LGUI,   TO(2),     KC_SPC,        KC_ENT,      TO(0), _______
+                                      //`-----------------------------'  `--------------------------------'
+  ),
+
+  [3] = LAYOUT_split_3x6_3_ex2(
+  //,-----------------------------------------------------------------.  ,----------------------------------------------------------------------------------.
+       KC_TAB, XXXXXXX,  KC_F12,   KC_F7,   KC_F8,   KC_F9, LCTL(KC_C),    LCTL(KC_V),    KC_HOME, KC_MS_WH_DOWN, KC_MS_WH_UP,     KC_PGUP, XXXXXXX, KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+-----------+--------------+------------+------------+--------+--------|
+      KC_LCTL, XXXXXXX,  KC_F11,   KC_F4,   KC_F5,   KC_F6,    KC_LALT,       KC_RALT, KC_MS_LEFT,    KC_MS_DOWN,    KC_MS_UP, KC_MS_RIGHT, XXXXXXX,   TO(3),
+  //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+-----------+--------------+------------+------------+--------+--------|
+      KC_LSFT, XXXXXXX,  KC_F10,   KC_F1,   KC_F2,   KC_F3,                                KC_END,       KC_BTN1,     KC_BTN2,     KC_PGDN, XXXXXXX,   TO(1),
+  //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+-----------+--------------+------------+------------+--------+--------|
+                                          KC_LGUI,   TO(2),     KC_SPC,        KC_ENT,      TO(0), _______
+                                      //`-----------------------------'  `--------------------------------'
   ),
 
   // 薙刀式レイヤー
-  [3] = LAYOUT_split_3x6_3_ex2(
-  //,-----------------------------------------------------------------.  ,-----------------------------------------------------------------.
-       KC_TAB,    NG_Q,    NG_W,    NG_E,    NG_R,    NG_T, LCTL(KC_C),    LCTL(KC_V),    NG_Y,    NG_U,    NG_I,    NG_O,    NG_P, _______,
-  //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    NG_A,    NG_S,    NG_D,    NG_F,    NG_G,    KC_LALT,       KC_RALT,    NG_H,    NG_J,    NG_K,    NG_L, NG_SCLN, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    NG_Z,    NG_X,    NG_C,    NG_V,    NG_B,                               NG_N,    NG_M, NG_COMM,  NG_DOT, NG_SLSH, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,    NG_SHFT,      NG_SHFT2, _______, _______
-                                      //`-----------------------------'  `-----------------------------'
-  ),
-
   [4] = LAYOUT_split_3x6_3_ex2(
-  //,-----------------------------------------------------------------.  ,----------------------------------------------------------------------------------.
-       KC_TAB, XXXXXXX,  KC_F12,   KC_F7,   KC_F8,   KC_F9, LCTL(KC_C),    LCTL(KC_V),    KC_HOME, KC_MS_WH_DOWN, KC_MS_WH_UP,     KC_PGUP, XXXXXXX, _______,
-  //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+-----------+--------------+------------+------------+--------+--------|
-      KC_LCTL, XXXXXXX,  KC_F11,   KC_F4,   KC_F5,   KC_F6,    KC_LALT,       KC_RALT, KC_MS_LEFT,    KC_MS_DOWN,    KC_MS_UP, KC_MS_RIGHT, XXXXXXX,   TO(0),
-  //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+-----------+--------------+------------+------------+--------+--------|
-      KC_LSFT, XXXXXXX,  KC_F10,   KC_F1,   KC_F2,   KC_F3,                                KC_END,       KC_BTN1,     KC_BTN2,     KC_PGDN, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+-----------+--------------+------------+------------+--------+--------|
-                                          KC_LGUI, _______,     KC_SPC,        KC_ENT, _______, _______
+  //,-----------------------------------------------------------------.  ,-----------------------------------------------------------------.
+       KC_TAB,    NG_Q,    NG_W,    NG_E,    NG_R,    NG_T, LCTL(KC_C),    LCTL(KC_V),    NG_Y,    NG_U,    NG_I,    NG_O,    NG_P, KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------+-----------|  |-----------+--------+--------+--------+--------+--------+--------|
+      KC_LCTL,    NG_A,    NG_S,    NG_D,    NG_F,    NG_G,    KC_LALT,       KC_RALT,    NG_H,    NG_J,    NG_K,    NG_L, NG_SCLN,   TO(3),
+  //|--------+--------+--------+--------+--------+--------+-----------'  `-----------+--------+--------+--------+--------+--------+--------|
+      KC_LSFT,    NG_Z,    NG_X,    NG_C,    NG_V,    NG_B,                               NG_N,    NG_M, NG_COMM,  NG_DOT, NG_SLSH,   TO(1),
+  //|--------+--------+--------+--------+--------+--------+-----------.  ,-----------+--------+--------+--------+--------+--------+--------|
+                                            TO(4),   TO(2),    NG_SHFT,      NG_SHFT2,  TO(0), _______
                                       //`-----------------------------'  `-----------------------------'
   )
 };
@@ -141,14 +141,14 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
   [0] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
   [1] = { ENCODER_CCW_CW(KC_MS_UP, KC_MS_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_MS_RIGHT, KC_MS_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
   [2] = { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_MS_WH_RIGHT, KC_MS_WH_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
-  [3] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
-  [4] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
+  [3] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
+  [4] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
 };
 #endif
 
 void keyboard_post_init_user(void) {
     // 薙刀式の初期化
-    set_naginata(3, ng_on_keys, ng_off_keys); // レイヤー3を薙刀式レイヤーとして使用
+    set_naginata(4, ng_on_keys, ng_off_keys); // レイヤー4を薙刀式レイヤーとして使用
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
