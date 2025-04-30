@@ -526,7 +526,7 @@ void ng_send_unicode_string_P(const char *pstr) {
 static int n_modifier = 0;
 
 bool process_modifier(uint16_t keycode, keyrecord_t *record) {
-  if (IS_MODIFIER_KEYCODE(keycode) || IS_QK_MOD_TAP(keycode) || keycode == TO(1) || keycode == TO(2) || keycode == TO(3) || keycode == TO(4)) {
+  if (IS_MODIFIER_KEYCODE(keycode) || IS_QK_MOD_TAP(keycode) || keycode == TO(1) || keycode == TO(2)) {
     if (record->event.pressed) {
       n_modifier++;
       layer_off(naginata_layer);
