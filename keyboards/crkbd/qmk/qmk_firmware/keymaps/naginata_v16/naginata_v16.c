@@ -15,6 +15,8 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "keymap_japanese.h"
+
 #include "nglist.h"
 #include "nglistarray.h"
 #include "naginata.h"
@@ -1000,67 +1002,84 @@ void ng_SY() {
   unregister_code(KC_LSFT);
 }
 
-void ngh_JKQ() { //【】{改行}{↑}
-  ng_send_unicode_string_P(PSTR("【】"));
-  ng_up(1);
+void ngh_JKQ() { // ぬ3　⇒【】を「ぬ3」に登録
+  tap_code(KC_N);
+  tap_code(KC_U);
+  tap_code(KC_3);
 }
 
-void ngh_JKW() { // ／{改行}
-  ng_send_unicode_string_P(PSTR("／"));
+void ngh_JKW() { // ぬ5　……を「ぬ5」に登録
+  tap_code(KC_N);
+  tap_code(KC_U);
+  tap_code(KC_5);
 }
 
 // void ngh_JKE() { // /*ディ*/
   
 // }
 
-void ngh_JKR() { // ^s
-  ng_save();
+void ngh_JKR() { // ぬ6　――を「ぬ6」に登録
+  tap_code(KC_N);
+  tap_code(KC_U);
+  tap_code(KC_6);
 }
 
 void ngh_JKT() { // ・
   tap_code(KC_SLSH);
 }
 
-void ngh_JKA() { // 『』{改行}{↑}
-  ng_send_unicode_string_P(PSTR("『』"));
-  ng_up(1);
+void ngh_JKA() { // ぬ2　⇒『』を「ぬ2」に登録
+  tap_code(KC_N);
+  tap_code(KC_U);
+  tap_code(KC_2);
 }
 
-void ngh_JKS() { // ⇒{改行}
-  ng_send_unicode_string_P(PSTR("⇒"));
+void ngh_JKS() { // ぬ1　⇒を「ぬ1」に登録
+  tap_code(KC_N);
+  tap_code(KC_U);
+  tap_code(KC_1);
 }
 
-void ngh_JKD() { // ？{改行}
-  ng_send_unicode_string_P(PSTR("？"));
+void ngh_JKD() { // ？
+  register_code(KC_LSFT);
+  tap_code(KC_SLSH);
+  unregister_code(KC_LSFT);
 }
 
-void ngh_JKF() { // 「{改行}
-  ng_send_unicode_string_P(PSTR("「"));
+void ngh_JKF() { // 「
+  tap_code(JP_LBRC);
 }
 
-void ngh_JKG() { // ({改行}
-  ng_send_unicode_string_P(PSTR("("));
+void ngh_JKG() { // (
+  register_code(KC_LSFT);
+  tap_code(JP_8);
+  unregister_code(KC_LSFT);
 }
 
-void ngh_JKZ() { //《》{改行}{↑}
-  ng_send_unicode_string_P(PSTR("《》"));
-  ng_up(1);
+void ngh_JKZ() { //  ぬ4　⇒《》を「ぬ4」に登録
+  tap_code(KC_N);
+  tap_code(KC_U);
+  tap_code(KC_4);
 }
 
 void ngh_JKX() { // F2
   tap_code(KC_F2);
 }
 
-void ngh_JKC() { // ！{改行}
-  ng_send_unicode_string_P(PSTR("！"));
+void ngh_JKC() { // ！
+  register_code(KC_LSFT);
+  tap_code(JP_1);
+  unregister_code(KC_LSFT);
 }
 
-void ngh_JKV() { // 」{改行}
-  ng_send_unicode_string_P(PSTR("」"));
+void ngh_JKV() { // 」
+  tap_code(JP_RBRC);
 }
 
-void ngh_JKB() { // ){改行}
-  ng_send_unicode_string_P(PSTR(")"));
+void ngh_JKB() { // )
+  register_code(KC_LSFT);
+  tap_code(JP_9);
+  unregister_code(KC_LSFT);
 }
 
 void ngh_DFY() { // ^c
